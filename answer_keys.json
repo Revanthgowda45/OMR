@@ -1,0 +1,45 @@
+{
+  "setA": {
+    "metadata": {
+      "totalQuestions": 100,
+      "subjects": {
+        "Python": {"start": 1, "end": 20, "count": 20},
+        "EDA": {"start": 21, "end": 40, "count": 20},
+        "SQL": {"start": 41, "end": 60, "count": 20},
+        "PowerBI": {"start": 61, "end": 80, "count": 20},
+        "Statistics": {"start": 81, "end": 100, "count": 20}
+      }
+    },
+    "answers": {
+      "Python": ["a", "c", "c", "c", "c", "a", "c", "c", "b", "c", "a", "a", "d", "a", "b", "a,b,c,d", "c", "d", "a", "b"],
+      "EDA": ["a", "d", "b", "a", "c", "b", "a", "b", "d", "c", "c", "a", "b", "c", "a", "b", "d", "b", "a", "b"],
+      "SQL": ["c", "c", "c", "b", "b", "a", "c", "b", "d", "a", "c", "b", "c", "c", "a", "b", "b", "a", "a,b", "b"],
+      "PowerBI": ["b", "c", "a", "b", "c", "b", "b", "c", "c", "b", "b", "b", "d", "b", "a", "b", "b", "b", "b", "b"],
+      "Statistics": ["a", "b", "c", "b", "c", "b", "b", "b", "a", "b", "c", "b", "c", "b", "b", "b", "c", "a", "b", "c"]
+    },
+    "rawAnswers": [
+      "a", "c", "c", "c", "c", "a", "c", "c", "b", "c",
+      "a", "a", "d", "a", "b", "a,b,c,d", "c", "d", "a", "b",
+      "a", "d", "b", "a", "c", "b", "a", "b", "d", "c",
+      "c", "a", "b", "c", "a", "b", "d", "b", "a", "b",
+      "c", "c", "c", "b", "b", "a", "c", "b", "d", "a",
+      "c", "b", "c", "c", "a", "b", "b", "a", "a,b", "b",
+      "b", "c", "a", "b", "c", "b", "b", "c", "c", "b",
+      "b", "b", "d", "b", "a", "b", "b", "b", "b", "b",
+      "a", "b", "c", "b", "c", "b", "b", "b", "a", "b",
+      "c", "b", "c", "b", "b", "b", "c", "a", "b", "c"
+    ],
+    "specialCases": {
+      "16": {
+        "type": "multiple_correct",
+        "acceptedAnswers": ["a", "b", "c", "d"],
+        "note": "All options are correct"
+      },
+      "59": {
+        "type": "multiple_correct", 
+        "acceptedAnswers": ["a", "b"],
+        "note": "Both a and b are correct"
+      }
+    }
+  }
+}
