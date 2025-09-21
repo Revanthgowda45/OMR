@@ -1,0 +1,8 @@
+{
+  "name": "netlify-functions",
+  "version": "1.0.0",
+  "description": "Netlify Functions for OMR Evaluation System",
+  "dependencies": {
+    "lambda-multipart-parser": "^1.0.1"
+  }
+}

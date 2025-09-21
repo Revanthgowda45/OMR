@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { ExamService, OMRResultService, ProcessingSessionService, AnalyticsService } from '../services/database';
-import type { Exam, OMRResult, ProcessingSession } from '../lib/supabase';
+import { ExamService, OMRResultService, AnalyticsService } from '../services/database';
 import toast from 'react-hot-toast';
 
 export interface ExamData {
@@ -135,7 +134,9 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
         studentId: result.student_id || 'Unknown',
         studentName: result.student_name || 'Anonymous',
         fileName: result.image_path || undefined,
-        answers: Object.values(result.student_responses).flat().map(String),
+        answers: Array.isArray(result.student_responses) 
+          ? result.student_responses.map(String)
+          : Object.values(result.student_responses || {}).flat().map(val => String(val || '')),
         score: Math.round(result.total_score),
         percentage: result.total_score,
         subjectScores: result.subject_scores as any,
@@ -243,7 +244,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
         student_name: resultData.studentName,
         student_id: resultData.studentId,
         student_responses: resultData.answers.reduce((acc, answer, index) => {
-          acc[index + 1] = [answer];
+          acc[index + 1] = [String(answer || '')];
           return acc;
         }, {} as Record<number, string[]>),
         confidence_scores: {},
@@ -251,7 +252,11 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
         detected_set: 'A',
         subject_scores: resultData.subjectScores,
         total_score: resultData.percentage,
-        processing_time: parseFloat(resultData.processingTime?.replace('s', '') || '0'),
+        processing_time: parseFloat(
+          typeof resultData.processingTime === 'string' 
+            ? resultData.processingTime.replace('s', '') 
+            : String(resultData.processingTime || '0')
+        ),
         image_path: resultData.fileName
       });
 

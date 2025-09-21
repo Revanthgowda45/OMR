@@ -112,7 +112,7 @@ const preprocessImage = async (imagePath) => {
 const detectOMRBubbles = async (imagePath, examSet = 'setA') => {
   // Use OMR2 integrated API service for maximum accuracy
   return new Promise((resolve, reject) => {
-    const pythonScript = path.join(__dirname, 'omr_api_service.py');
+    const pythonScript = path.join(__dirname, 'integrated_omr_service.py');
     const pythonProcess = spawn('python', [pythonScript, imagePath, '--exam-set', examSet, '--method', 'perfect']);
     
     let outputData = '';
@@ -365,7 +365,7 @@ const processOMRFile = async (job, exam) => {
       
       // Visualizations (if available)
       visualizations: omrResults.visualizations || {},
-      fileName: req.file.originalname,
+      fileName: job.fileName,
       processingTime: omrResults.processingTime || '< 1s'
     };
 

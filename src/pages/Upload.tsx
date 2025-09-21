@@ -62,7 +62,9 @@ const Upload: React.FC = () => {
           subjectScores: result.evaluation?.subjectScores || {},
           submittedAt: new Date().toISOString(),
           processingMethod: result.processingMethod,
-          processingTime: result.processingTime || '0.2s',
+          processingTime: typeof result.processingTime === 'string' 
+            ? result.processingTime 
+            : `${result.processingTime || 0.2}s`,
           evaluation: result.evaluation?.detailedResults || [],
           detailedResults: result.evaluation?.detailedResults || [],
           summary: result.evaluation?.summary || {},

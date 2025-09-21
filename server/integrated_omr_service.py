@@ -90,7 +90,7 @@ class IntegratedOMRService:
                 "detectedResponses": detected_responses,
                 "evaluation": evaluation_results,
                 "processingMethod": "Fast Detection",
-                "processingTime": round(processing_time, 2),
+                "processingTime": f"{round(processing_time, 2)}s",
                 "timestamp": self._get_timestamp()
             }
             
