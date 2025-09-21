@@ -3,11 +3,12 @@
 **Code4Edtech Hackathon 2025 - Computer Vision Theme**  
 *Innomatics Research Labs Challenge*
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://your-app-url.streamlit.app)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black.svg)](https://github.com/Revanthgowda45/OMR)
+[![Netlify](https://img.shields.io/badge/Netlify-Deployed-00C7B7.svg)](https://your-app-url.netlify.app)
 [![React](https://img.shields.io/badge/React-18+-blue.svg)](https://reactjs.org)
 [![Python](https://img.shields.io/badge/Python-3.8+-green.svg)](https://python.org)
 [![OpenCV](https://img.shields.io/badge/OpenCV-4.8+-orange.svg)](https://opencv.org)
-[![Supabase](https://img.shields.io/badge/Supabase-Database-brightgreen.svg)](https://supabase.com)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow.svg)](https://javascript.info)
 
 ## 📋 Problem Statement
 
